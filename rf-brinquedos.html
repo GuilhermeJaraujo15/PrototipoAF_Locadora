@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RF Brinquedos — Locação de brinquedos para festas e eventos</title>
+<meta name="description" content="Locação de brinquedos infláveis e recreativos com segurança, pontualidade e equipe especializada. Festas, escolas, condomínios e eventos corporativos." />
+<meta property="og:title" content="RF Brinquedos — Diversão segura para o seu evento" />
+<meta property="og:description" content="Pula-pula, tobogã, piscina de bolinhas e mais. Brinquedos higienizados, equipe treinada e atendimento profissional." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="/logo-rf.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<!-- TailwindCSS via CDN (Play CDN) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+          display: ['"Baloo 2"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        },
+        colors: {
+          background: '#ffffff',
+          foreground: '#0f172a',
+          muted: '#f8fafc',
+          'muted-foreground': '#64748b',
+          border: '#e6e9ef',
+          brand: {
+            blue: '#1296DB',
+            'blue-dark': '#0E78B0',
+            yellow: '#FFC928',
+            red: '#F44336',
+            green: '#45C16E',
+          },
+          ink: { 100: '#F8FAFC', 800: '#1F2937', 900: '#111827' },
+        },
+        boxShadow: {
+          soft: '0 10px 30px -10px rgba(18,150,219,0.18)',
+          card: '0 4px 24px -6px rgba(17,24,39,0.08)',
+          lift: '0 24px 48px -16px rgba(17,24,39,0.18)',
+        },
+        backgroundImage: {
+          'brand-gradient': 'linear-gradient(135deg,#1296DB 0%,#45C16E 50%,#FFC928 100%)',
+          'hero-gradient': 'linear-gradient(135deg,#1296DB 0%,#45C16E 100%)',
+        },
+        letterSpacing: { tightish: '-0.02em' },
+      },
+    },
+  };
+</script>
+
+<!-- Folha de estilos personalizável -->
+<link rel="stylesheet" href="rf-brinquedos.css" />
+</head>
+<body class="min-h-screen bg-background text-foreground">
+
+<header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300 header-bg">
+  <!-- Camada de bolinhas decorativas -->
+  <div aria-hidden="true" class="header-balls">
+    <!-- Bolinhas distribuídas a partir de 30% da largura -->
+    <span class="ball" style="background:var(--brand-red); top:10%; left:32%;"></span>
+    <span class="ball" style="background:var(--brand-yellow); top:20%; left:40%;"></span>
+    <span class="ball" style="background:var(--brand-blue); top:5%; left:50%;"></span>
+    <span class="ball" style="background:var(--brand-green); top:35%; left:60%;"></span>
+    <span class="ball" style="background:var(--brand-red); top:15%; left:70%;"></span>
+    <span class="ball" style="background:var(--brand-yellow); top:40%; left:80%;"></span>
+    <span class="ball" style="background:var(--brand-blue); top:8%; left:85%;"></span>
+    <span class="ball" style="background:var(--brand-green); top:28%; left:92%;"></span>
+    <span class="ball" style="background:var(--brand-red); top:50%; left:45%;"></span>
+    <span class="ball" style="background:var(--brand-yellow); top:55%; left:55%;"></span>
+    <span class="ball" style="background:var(--brand-blue); top:45%; left:75%;"></span>
+    <span class="ball" style="background:var(--brand-green); top:60%; left:65%;"></span>
+    <span class="ball" style="background:var(--brand-red); top:70%; left:50%;"></span>
+    <span class="ball" style="background:var(--brand-yellow); top:75%; left:85%;"></span>
+    <span class="ball" style="background:var(--brand-blue); top:80%; left:60%;"></span>
+    <span class="ball" style="background:var(--brand-green); top:85%; left:75%;"></span>
+  </div>
+
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-2 lg:px-8 relative z-10">
+    <!-- Logo sem fundo (apenas a imagem) -->
+    <a href="#inicio" class="flex items-center logo-clean">
+      <img src="./img/logorf.png" alt="Logotipo RF Brinquedos" class="h-16 w-16 md:h-20 md:w-20 object-contain" />
+    </a>
+
+    <nav class="hidden items-center gap-8 lg:flex">
+      <a href="#inicio"     class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Início</a>
+      <a href="#sobre"      class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Sobre</a>
+      <a href="#brinquedos" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Brinquedos</a>
+      <a href="#momentos"   class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Momentos</a>
+      <a href="#avaliacoes" class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Avaliações</a>
+      <a href="#contato"    class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Contato</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a href="https://wa.me/5500000000000" class="hidden lg:inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-soft bg-hero-gradient hover:-translate-y-0.5 transition-transform">
+        Solicitar Orçamento <i data-lucide="arrow-right" class="h-4 w-4"></i>
+      </a>
+      <button id="menu-btn" class="grid h-11 w-11 place-items-center rounded-xl border border-border bg-white lg:hidden" aria-label="Menu">
+        <i data-lucide="menu" class="h-5 w-5"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- mobile menu (mantido) -->
+  <div id="mobile-menu" class="hidden border-t border-border bg-white px-5 py-4 lg:hidden">
+    <nav class="flex flex-col gap-3">
+      <a href="#inicio"     class="rounded-lg px-2 py-2 text-base font-medium hover:bg-muted">Início</a>
+      <a href="#sobre"      class="rounded-lg px-2 py-2 text-base font-medium hover:bg-muted">Sobre</a>
+      <a href="#brinquedos" class="rounded-lg px-2 py-2 text-base font-medium hover:bg-muted">Brinquedos</a>
+      <a href="#momentos"   class="rounded-lg px-2 py-2 text-base font-medium hover:bg-muted">Momentos</a>
+      <a href="#avaliacoes" class="rounded-lg px-2 py-2 text-base font-medium hover:bg-muted">Avaliações</a>
+      <a href="#contato"    class="rounded-lg px-2 py-2 text-base font-medium hover:bg-muted">Contato</a>
+      <a href="https://wa.me/5500000000000" class="mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-white bg-hero-gradient">Solicitar Orçamento <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="relative overflow-hidden pt-28 lg:pt-32">
+  <div aria-hidden class="pointer-events-none absolute -left-24 top-24 h-72 w-72 rounded-full opacity-30 blur-3xl" style="background:var(--brand-yellow)"></div>
+  <div aria-hidden class="pointer-events-none absolute -right-24 top-48 h-80 w-80 rounded-full opacity-20 blur-3xl" style="background:var(--brand-blue)"></div>
+  <div data-parallax="0.12" aria-hidden class="deco-ball anim-float hidden h-16 w-16 sm:block" style="background:var(--brand-red); top:120px; left:6%;"></div>
+  <div data-parallax="0.22" aria-hidden class="deco-ball anim-float-slow hidden h-10 w-10 sm:block" style="background:var(--brand-green); top:230px; left:14%;"></div>
+  <div data-parallax="0.18" aria-hidden class="deco-ball anim-float hidden h-12 w-12 lg:block" style="background:var(--brand-yellow); top:330px; left:3%;"></div>
+  <div data-parallax="0.1" aria-hidden class="deco-ball anim-float-slow hidden h-14 w-14 lg:block" style="background:var(--brand-blue); top:90px; right:6%;"></div>
+
+  <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-20 pt-8 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:pb-28">
+    <div class="relative z-10 reveal">
+      <span class="inline-flex items-center gap-2 rounded-full border border-border bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground shadow-soft backdrop-blur">
+        <span class="h-2 w-2 rounded-full anim-float" style="background:var(--brand-green)"></span>
+        Locação premium de brinquedos
+      </span>
+      <h1 class="mt-5 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+        Transformamos festas em <span class="text-gradient-hero">momentos inesquecíveis.</span>
+      </h1>
+      <p class="mt-5 max-w-xl text-lg text-muted-foreground">
+        Brinquedos seguros, diversão garantida e atendimento profissional para eventos de todos os tamanhos.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="https://wa.me/5500000000000" class="inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold text-white shadow-soft bg-hero-gradient hover:-translate-y-0.5 transition-transform">
+          Solicitar Orçamento <i data-lucide="arrow-right" class="h-4 w-4"></i>
+        </a>
+        <a href="#brinquedos" class="inline-flex items-center gap-2 rounded-full border border-border bg-white px-6 py-3.5 text-sm font-semibold hover:bg-muted">
+          Conhecer Brinquedos
+        </a>
+      </div>
+
+      <div class="mt-8 grid max-w-xl grid-cols-3 gap-3">
+        <div class="flex flex-col items-center gap-1.5 rounded-2xl border border-border bg-white/80 p-3 text-center shadow-card backdrop-blur">
+          <span class="grid h-9 w-9 place-items-center rounded-xl text-white" style="background:var(--brand-blue)"><i data-lucide="badge-check" class="h-5 w-5"></i></span>
+          <p class="text-[11px] font-bold leading-tight">Empresa de confiança</p>
+        </div>
+        <div class="flex flex-col items-center gap-1.5 rounded-2xl border border-border bg-white/80 p-3 text-center shadow-card backdrop-blur">
+          <span class="grid h-9 w-9 place-items-center rounded-xl text-white" style="background:var(--brand-green)"><i data-lucide="shield-check" class="h-5 w-5"></i></span>
+          <p class="text-[11px] font-bold leading-tight">Segurança certificada</p>
+        </div>
+        <div class="flex flex-col items-center gap-1.5 rounded-2xl border border-border bg-white/80 p-3 text-center shadow-card backdrop-blur">
+          <span class="grid h-9 w-9 place-items-center rounded-xl text-white" style="background:var(--brand-red)"><i data-lucide="zap" class="h-5 w-5"></i></span>
+          <p class="text-[11px] font-bold leading-tight">Atendimento rápido</p>
+        </div>
+      </div>
+
+      <ul class="mt-7 grid max-w-xl grid-cols-2 gap-x-6 gap-y-3 text-sm">
+        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-5 w-5 shrink-0" style="color:var(--brand-green)"></i><span class="font-medium">Atendimento rápido</span></li>
+        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-5 w-5 shrink-0" style="color:var(--brand-green)"></i><span class="font-medium">Brinquedos higienizados</span></li>
+        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-5 w-5 shrink-0" style="color:var(--brand-green)"></i><span class="font-medium">Equipe especializada</span></li>
+        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-5 w-5 shrink-0" style="color:var(--brand-green)"></i><span class="font-medium">Segurança para as crianças</span></li>
+      </ul>
+    </div>
+
+    <div class="relative reveal-scale">
+      <div data-parallax="0.06" aria-hidden class="absolute -left-6 -top-6 h-24 w-24 rounded-3xl anim-float" style="background:var(--brand-red)"></div>
+      <div data-parallax="0.1" aria-hidden class="absolute -bottom-6 -right-4 h-32 w-32 rounded-full anim-float-slow" style="background:var(--brand-yellow)"></div>
+      <div class="relative overflow-hidden rounded-[2rem] shadow-lift ring-1 ring-black/5">
+        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1024&q=80" alt="Crianças felizes em festa" class="aspect-[4/5] w-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+      </div>
+      <div class="absolute -bottom-6 left-6 flex items-center gap-3 rounded-2xl bg-white p-3 pr-5 shadow-lift anim-float">
+        <div class="grid h-10 w-10 place-items-center rounded-xl" style="background:var(--brand-blue)">
+          <i data-lucide="star" class="h-5 w-5 text-white" fill="white"></i>
+        </div>
+        <div>
+          <p class="text-sm font-bold leading-tight">4.9 / 5</p>
+          <p class="text-xs text-muted-foreground">Avaliação dos clientes</p>
+        </div>
+      </div>
+      <div class="absolute -top-4 right-4 flex items-center gap-2 rounded-2xl bg-white p-3 pr-4 shadow-lift anim-float-slow">
+        <div class="grid h-9 w-9 place-items-center rounded-xl text-white" style="background:var(--brand-green)">
+          <i data-lucide="party-popper" class="h-5 w-5"></i>
+        </div>
+        <div>
+          <p class="text-sm font-extrabold leading-tight">+500</p>
+          <p class="text-[11px] text-muted-foreground">eventos realizados</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div aria-hidden class="pointer-events-none -mb-px text-[var(--ink-100)]">
+    <svg viewBox="0 0 1440 110" class="w-full" preserveAspectRatio="none"><path fill="currentColor" d="M0,64L60,58.7C120,53,240,43,360,48C480,53,600,75,720,80C840,85,960,75,1080,64C1200,53,1320,43,1380,37.3L1440,32L1440,110L0,110Z"></path></svg>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="relative border-b border-border py-20 lg:py-28" style="background:var(--ink-100)">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="max-w-2xl reveal">
+      <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue">Diferenciais</p>
+      <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">Por que escolher a RF Brinquedos?</h2>
+      <p class="mt-4 text-base text-muted-foreground">Mais do que alugar brinquedos, entregamos uma experiência completa para que sua festa seja organizada, segura e memorável.</p>
+    </div>
+    <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="reveal group relative overflow-hidden rounded-3xl border border-border bg-white p-7 shadow-card hover:-translate-y-1 hover:shadow-lift transition-all duration-300">
+        <div class="grid h-12 w-12 place-items-center rounded-2xl text-white shadow-soft" style="background:var(--brand-blue)"><i data-lucide="shield-check" class="h-6 w-6"></i></div>
+        <h3 class="mt-5 text-lg font-bold">Segurança</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Equipamentos certificados, vistoriados e instalados conforme normas técnicas para a tranquilidade dos pais.</p>
+      </div>
+      <div class="reveal group relative overflow-hidden rounded-3xl border border-border bg-white p-7 shadow-card hover:-translate-y-1 hover:shadow-lift transition-all duration-300" style="transition-delay:.06s">
+        <div class="grid h-12 w-12 place-items-center rounded-2xl text-white shadow-soft" style="background:var(--brand-green)"><i data-lucide="clock-4" class="h-6 w-6"></i></div>
+        <h3 class="mt-5 text-lg font-bold">Pontualidade</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Chegamos com antecedência para montar tudo e garantir que sua festa comece exatamente na hora marcada.</p>
+      </div>
+      <div class="reveal group relative overflow-hidden rounded-3xl border border-border bg-white p-7 shadow-card hover:-translate-y-1 hover:shadow-lift transition-all duration-300" style="transition-delay:.12s">
+        <div class="grid h-12 w-12 place-items-center rounded-2xl text-white shadow-soft" style="background:var(--brand-yellow)"><i data-lucide="sparkles" class="h-6 w-6"></i></div>
+        <h3 class="mt-5 text-lg font-bold">Equipamentos de Qualidade</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Brinquedos higienizados a cada uso, conservados e renovados periodicamente para uma experiência impecável.</p>
+      </div>
+      <div class="reveal group relative overflow-hidden rounded-3xl border border-border bg-white p-7 shadow-card hover:-translate-y-1 hover:shadow-lift transition-all duration-300" style="transition-delay:.18s">
+        <div class="grid h-12 w-12 place-items-center rounded-2xl text-white shadow-soft" style="background:var(--brand-red)"><i data-lucide="heart-handshake" class="h-6 w-6"></i></div>
+        <h3 class="mt-5 text-lg font-bold">Atendimento Humanizado</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Equipe atenciosa que entende o seu evento e cuida de cada detalhe com carinho do início ao fim.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE (com números animados) -->
+<section id="sobre" class="relative overflow-hidden py-20 lg:py-28">
+  <div data-parallax="0.08" aria-hidden class="deco-ball anim-float hidden h-12 w-12 lg:block" style="background:var(--brand-yellow); top:60px; right:8%;"></div>
+  <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2 lg:gap-16 lg:px-8">
+    <div class="relative reveal-scale">
+      <div aria-hidden class="absolute -left-4 -top-4 h-32 w-32 rounded-3xl anim-blob" style="background:var(--brand-green);opacity:.18"></div>
+      <div class="relative overflow-hidden rounded-[2rem] shadow-lift ring-1 ring-black/5">
+        <img src="" alt="" class="aspect-[4/3] w-full object-cover" loading="lazy" />
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue">Sobre nós</p>
+      <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">Mais do que brinquedos, criamos experiências.</h2>
+      <p class="mt-5 text-base leading-relaxed text-muted-foreground">Há mais de cinco anos a RF Brinquedos atende famílias, escolas, condomínios e empresas com locação de brinquedos infláveis e recreativos. Nossa missão é oferecer momentos de pura alegria com a tranquilidade de uma operação profissional, segura e pontual.</p>
+      <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <div class="rounded-2xl border border-border bg-white p-4 text-center shadow-card">
+          <p class="text-2xl font-extrabold tracking-tight sm:text-3xl" style="color:var(--brand-blue)" data-count="500" data-suffix="+">0</p>
+          <p class="mt-1 text-xs font-medium text-muted-foreground">Eventos Realizados</p>
+        </div>
+        <div class="rounded-2xl border border-border bg-white p-4 text-center shadow-card">
+          <p class="text-2xl font-extrabold tracking-tight sm:text-3xl" style="color:var(--brand-green)" data-count="1000" data-suffix="+">0</p>
+          <p class="mt-1 text-xs font-medium text-muted-foreground">Crianças Atendidas</p>
+        </div>
+        <div class="rounded-2xl border border-border bg-white p-4 text-center shadow-card">
+          <p class="text-2xl font-extrabold tracking-tight sm:text-3xl" style="color:var(--brand-red)" data-count="98" data-suffix="%">0</p>
+          <p class="mt-1 text-xs font-medium text-muted-foreground">Satisfação</p>
+        </div>
+        <div class="rounded-2xl border border-border bg-white p-4 text-center shadow-card">
+          <p class="text-2xl font-extrabold tracking-tight sm:text-3xl" style="color:var(--brand-yellow)" data-count="5" data-suffix=" anos">0</p>
+          <p class="mt-1 text-xs font-medium text-muted-foreground">de Experiência</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRINQUEDOS (sem filtros, agrupado por categoria) -->
+<section id="brinquedos" class="relative py-20 lg:py-28" style="background:var(--ink-100)">
+  <div data-parallax="0.1" aria-hidden class="deco-ball anim-float-slow hidden h-14 w-14 lg:block" style="background:var(--brand-yellow); top:80px; left:4%;"></div>
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6 reveal">
+      <div class="max-w-2xl">
+        <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue">Catálogo</p>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">Nossos Brinquedos</h2>
+        <p class="mt-4 text-base text-muted-foreground">Escolha as atrações ideais para o seu evento. Todos os equipamentos são higienizados e vistoriados antes de cada locação.</p>
+      </div>
+      <a href="https://wa.me/5500000000000" class="hidden sm:inline-flex items-center gap-2 rounded-full border border-border bg-white px-5 py-2.5 text-sm font-semibold shadow-soft hover:bg-muted">Pedir catálogo completo <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+    </div>
+
+    <!-- Grid de brinquedos agrupados por categoria -->
+    <div id="toy-grid" class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3"></div>
+  </div>
+</section>
+
+<!-- PROCESSO -->
+<section class="py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="max-w-2xl reveal">
+      <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue">Processo</p>
+      <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">Como funciona a contratação</h2>
+      <p class="mt-4 text-base text-muted-foreground">Simples, transparente e sem complicação — em poucos passos sua festa está pronta.</p>
+    </div>
+    <div class="relative mt-14">
+      <div aria-hidden class="absolute left-0 right-0 top-7 hidden h-px lg:block" style="background:linear-gradient(to right,transparent,#e6e9ef,transparent)"></div>
+      <ol id="process-list" class="grid gap-8 lg:grid-cols-5"></ol>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="relative py-20 lg:py-28" style="background:var(--ink-100)">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6 reveal">
+      <div class="max-w-2xl">
+        <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue">Galeria</p>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">Momentos que ficam na memória</h2>
+      </div>
+      <div class="inline-flex items-center gap-3 rounded-2xl border border-border bg-white px-5 py-3 shadow-card">
+        <span class="grid h-10 w-10 place-items-center rounded-xl text-white" style="background:var(--brand-red)"><i data-lucide="party-popper" class="h-5 w-5"></i></span>
+        <div>
+          <p class="text-lg font-extrabold leading-none"><span data-count="500" data-suffix="+">0</span></p>
+          <p class="text-xs text-muted-foreground">eventos realizados</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-12 grid auto-rows-[180px] grid-cols-2 gap-4 sm:auto-rows-[220px] lg:grid-cols-4">
+      <button type="button" class="gallery-item reveal-scale group relative overflow-hidden rounded-3xl shadow-card row-span-2 text-left" data-img="https://images.unsplash.com/photo-1464047736614-af63643285bf?auto=format&fit=crop&w=1400&q=80" data-caption="Aniversário">
+        <img src="https://images.unsplash.com/photo-1464047736614-af63643285bf?auto=format&fit=crop&w=900&q=80" alt="Aniversário" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent"></div>
+        <span class="absolute bottom-4 left-4 inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-xs font-bold backdrop-blur">Aniversário</span>
+        <span class="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full bg-white/90 opacity-0 transition-opacity group-hover:opacity-100"><i data-lucide="expand" class="h-4 w-4"></i></span>
+      </button>
+      <button type="button" class="gallery-item reveal-scale group relative overflow-hidden rounded-3xl shadow-card text-left" data-img="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1400&q=80" data-caption="Evento Escolar">
+        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=80" alt="Evento Escolar" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent"></div>
+        <span class="absolute bottom-4 left-4 inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-xs font-bold backdrop-blur">Evento Escolar</span>
+        <span class="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full bg-white/90 opacity-0 transition-opacity group-hover:opacity-100"><i data-lucide="expand" class="h-4 w-4"></i></span>
+      </button>
+      <button type="button" class="gallery-item reveal-scale group relative overflow-hidden rounded-3xl shadow-card row-span-2 text-left" data-img="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&w=1400&q=80" data-caption="Condomínio">
+        <img src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&w=900&q=80" alt="Condomínio" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent"></div>
+        <span class="absolute bottom-4 left-4 inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-xs font-bold backdrop-blur">Condomínio</span>
+        <span class="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full bg-white/90 opacity-0 transition-opacity group-hover:opacity-100"><i data-lucide="expand" class="h-4 w-4"></i></span>
+      </button>
+      <button type="button" class="gallery-item reveal-scale group relative overflow-hidden rounded-3xl shadow-card text-left" data-img="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=1400&q=80" data-caption="Festa em Família">
+        <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=900&q=80" alt="Festa em Família" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent"></div>
+        <span class="absolute bottom-4 left-4 inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-xs font-bold backdrop-blur">Festa em Família</span>
+        <span class="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full bg-white/90 opacity-0 transition-opacity group-hover:opacity-100"><i data-lucide="expand" class="h-4 w-4"></i></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- MOMENTOS DE DIVERSÃO -->
+<section id="momentos" class="relative overflow-hidden py-20 lg:py-28">
+  <div data-parallax="0.12" aria-hidden class="deco-ball anim-float hidden h-12 w-12 lg:block" style="background:var(--brand-red); top:70px; left:5%;"></div>
+  <div data-parallax="0.16" aria-hidden class="deco-ball anim-float-slow hidden h-10 w-10 lg:block" style="background:var(--brand-yellow); bottom:80px; right:7%;"></div>
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center reveal">
+      <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue">Momentos de Diversão</p>
+      <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">Imagine a alegria na sua festa</h2>
+      <p class="mt-4 text-base text-muted-foreground">Sorrisos das crianças, pais tranquilos e memórias que duram para sempre. É isso que entregamos em cada evento.</p>
+    </div>
+
+    <div class="mt-12 grid gap-4 sm:grid-cols-6 lg:grid-cols-12 lg:gap-5">
+      <div class="reveal-scale group relative col-span-2 overflow-hidden rounded-[2rem] shadow-lift sm:col-span-4 lg:col-span-7 lg:row-span-2">
+        <img src="" alt="Crianças sorrindo brincando juntas" class="h-72 w-full object-cover transition-transform duration-700 group-hover:scale-105 lg:h-full" loading="lazy" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <div class="absolute bottom-6 left-6 text-white">
+          <p class="font-display text-2xl font-extrabold">Pura alegria</p>
+          <p class="text-sm text-white/85">Crianças vivendo momentos inesquecíveis</p>
+        </div>
+      </div>
+      <div class="reveal-scale group relative col-span-2 overflow-hidden rounded-[2rem] shadow-lift sm:col-span-2 lg:col-span-5" style="transition-delay:.06s">
+        <img src="" alt="Família feliz comemorando" class="h-44 w-full object-cover transition-transform duration-700 group-hover:scale-105 lg:h-60" loading="lazy" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent"></div>
+        <p class="absolute bottom-4 left-5 font-display text-lg font-extrabold text-white">Pais felizes</p>
+      </div>
+      <div class="reveal-scale group relative col-span-2 overflow-hidden rounded-[2rem] shadow-lift sm:col-span-2 lg:col-span-5" style="transition-delay:.12s">
+        <img src="" alt="Festa acontecendo com decoração colorida" class="h-44 w-full object-cover transition-transform duration-700 group-hover:scale-105 lg:h-60" loading="lazy" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent"></div>
+        <p class="absolute bottom-4 left-5 font-display text-lg font-extrabold text-white">Eventos vibrantes</p>
+      </div>
+    </div>
+
+    <div class="mt-10 text-center reveal">
+      <a href="https://wa.me/5500000000000" class="inline-flex items-center gap-2 rounded-full px-7 py-4 text-sm font-semibold text-white shadow-soft bg-hero-gradient hover:-translate-y-0.5 transition-transform">
+        Quero uma festa assim <i data-lucide="party-popper" class="h-4 w-4"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- AVALIAÇÕES -->
+<section id="avaliacoes" class="relative py-20 lg:py-28" style="background:var(--ink-100)">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6 reveal">
+      <div class="max-w-2xl">
+        <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue">Avaliações</p>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">O que nossos clientes dizem</h2>
+      </div>
+      <div class="flex items-center gap-3 rounded-2xl border border-border bg-white p-4 shadow-card">
+        <div class="flex" id="rating-stars"></div>
+        <div>
+          <p class="text-base font-extrabold leading-none">4.9 / 5</p>
+          <p class="text-xs text-muted-foreground">Avaliação média</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal mt-10 overflow-hidden">
+      <div id="reviews-track" class="flex"></div>
+    </div>
+    <div class="mt-8 flex items-center justify-center gap-4">
+      <button id="rev-prev" class="grid h-11 w-11 place-items-center rounded-full border border-border bg-white shadow-card hover:bg-muted" aria-label="Anterior"><i data-lucide="chevron-left" class="h-5 w-5"></i></button>
+      <div id="reviews-dots" class="flex items-center gap-2"></div>
+      <button id="rev-next" class="grid h-11 w-11 place-items-center rounded-full border border-border bg-white shadow-card hover:bg-muted" aria-label="Próximo"><i data-lucide="chevron-right" class="h-5 w-5"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="px-5 py-20 lg:px-8 lg:py-28">
+  <div class="relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] px-6 py-16 text-white shadow-lift sm:px-12 sm:py-20 lg:py-24 bg-brand-gradient reveal-scale">
+    <div aria-hidden class="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-white/20 blur-3xl"></div>
+    <div aria-hidden class="absolute -bottom-24 -left-10 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
+    <div aria-hidden class="deco-ball anim-float hidden h-12 w-12 sm:block" style="background:#fff;opacity:.25; top:30px; left:8%;"></div>
+    <div class="relative mx-auto max-w-3xl text-center">
+      <h2 class="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-5xl">Pronto para tornar sua festa inesquecível?</h2>
+      <p class="mt-4 text-base text-white/90 sm:text-lg">Solicite um orçamento sem compromisso. Respondemos rapidinho!</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="https://wa.me/5500000000000" class="inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-extrabold text-foreground shadow-lift hover:-translate-y-0.5 transition-transform">
+          <i data-lucide="message-circle" class="h-5 w-5" style="color:var(--brand-green)"></i> Falar no WhatsApp
+        </a>
+        <a href="tel:+550000000000" class="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-4 text-sm font-semibold text-white backdrop-blur hover:bg-white/20">
+          <i data-lucide="phone" class="h-5 w-5"></i> Ligar agora
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contato" class="border-t border-border bg-white">
+  <div class="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-4 lg:px-8">
+    <div>
+      <div class="flex items-center gap-3">
+        <img src="/logo-rf.png" alt="Logotipo RF Brinquedos" class="h-12 w-12 rounded-xl object-cover shadow-soft" />
+        <span class="text-lg font-extrabold tracking-tight font-display">RF Brinquedos</span>
+      </div>
+      <p class="mt-4 text-sm leading-relaxed text-muted-foreground">Locação profissional de brinquedos para festas, escolas, condomínios e eventos corporativos familiares.</p>
+      <div class="mt-5 flex flex-wrap gap-3">
+        <a href="https://wa.me/5500000000000" class="inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold text-white shadow-soft hover:-translate-y-0.5 transition-transform" style="background:var(--brand-green)">
+          <i data-lucide="message-circle" class="h-4 w-4"></i> WhatsApp
+        </a>
+        <a href="https://instagram.com/rfbrinquedos" class="inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold text-white shadow-soft hover:-translate-y-0.5 transition-transform" style="background:linear-gradient(135deg,#F44336,#FFC928)">
+          <i data-lucide="instagram" class="h-4 w-4"></i> @rfbrinquedos
+        </a>
+      </div>
+    </div>
+    <div>
+      <p class="text-sm font-bold">Links rápidos</p>
+      <ul class="mt-4 space-y-2 text-sm text-muted-foreground">
+        <li><a class="hover:text-foreground" href="#inicio">Início</a></li>
+        <li><a class="hover:text-foreground" href="#sobre">Sobre</a></li>
+        <li><a class="hover:text-foreground" href="#brinquedos">Brinquedos</a></li>
+        <li><a class="hover:text-foreground" href="#momentos">Momentos</a></li>
+        <li><a class="hover:text-foreground" href="#avaliacoes">Avaliações</a></li>
+        <li><a class="hover:text-foreground" href="#contato">Contato</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-sm font-bold">Contato</p>
+      <ul class="mt-4 space-y-3 text-sm text-muted-foreground">
+        <li class="flex items-center gap-2"><i data-lucide="message-circle" class="h-4 w-4" style="color:var(--brand-green)"></i> WhatsApp</li>
+        <li class="flex items-center gap-2"><i data-lucide="instagram" class="h-4 w-4" style="color:var(--brand-red)"></i> @rfbrinquedos</li>
+        <li class="flex items-center gap-2"><i data-lucide="phone" class="h-4 w-4" style="color:var(--brand-blue)"></i> (00) 0000-0000</li>
+        <li class="flex items-center gap-2"><i data-lucide="map-pin" class="h-4 w-4" style="color:var(--brand-yellow)"></i> Atendemos toda a região</li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-sm font-bold">Localização</p>
+      <div class="mt-4 overflow-hidden rounded-2xl border border-border shadow-card ring-1 ring-black/5">
+        <iframe title="Mapa RF Brinquedos" src="https://www.google.com/maps?q=Brasil&output=embed" class="h-48 w-full grayscale-[.15]" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-border">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-5 py-6 text-xs text-muted-foreground sm:flex-row lg:px-8">
+      <p>© <span id="year"></span> RF Brinquedos. Todos os direitos reservados.</p>
+      <p>Feito com carinho para famílias felizes.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/5500000000000" id="wa-float" aria-label="Falar no WhatsApp"
+   class="wa-float fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full px-4 py-3.5 text-sm font-bold text-white shadow-lift transition-transform hover:-translate-y-0.5"
+   style="background:var(--brand-green)">
+  <i data-lucide="message-circle" class="h-6 w-6"></i>
+  <span class="hidden sm:inline">Fale conosco</span>
+</a>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 p-4 opacity-0 backdrop-blur-sm">
+  <button id="lightbox-close" class="absolute right-5 top-5 grid h-11 w-11 place-items-center rounded-full bg-white/15 text-white hover:bg-white/25" aria-label="Fechar"><i data-lucide="x" class="h-6 w-6"></i></button>
+  <figure class="max-h-[88vh] w-full max-w-4xl">
+    <img id="lightbox-img" src="" alt="" class="mx-auto max-h-[80vh] w-auto rounded-2xl object-contain shadow-lift" />
+    <figcaption id="lightbox-caption" class="mt-4 text-center text-sm font-medium text-white/90"></figcaption>
+  </figure>
+</div>
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+  /* =====================================================================
+     DATA
+  ===================================================================== */
+  const toys = [
+    { name:"Pula-Pula",          img:"", desc:"Clássico inflável colorido para horas de diversão saltitante.", age:"3 a 12 anos", capacity:"Até 8 crianças", category:"Infláveis", ageGroup:"3-12", event:["Aniversário","Escolar","Condomínio"], badge:"mais-alugado" },
+    { name:"Tobogã Inflável",    img:"", desc:"Escorregador gigante que vira o destaque do evento.",            age:"5 a 14 anos", capacity:"Até 6 crianças", category:"Infláveis", ageGroup:"5-14", event:["Aniversário","Escolar"], badge:"recomendado" },
+    { name:"Piscina de Bolinhas",img:"", desc:"Diversão garantida para os pequenos com bolinhas higienizadas.", age:"1 a 6 anos",  capacity:"Até 10 crianças", category:"Recreativos", ageGroup:"1-6", event:["Aniversário","Condomínio"], badge:"mais-alugado" },
+    { name:"Futebol de Sabão",   img:"", desc:"Espuma, gols e muitas risadas para times animados.",            age:"8 a 16 anos", capacity:"Até 12 jogadores", category:"Esportivos", ageGroup:"8-16", event:["Escolar","Corporativo"], badge:"novidade" },
+    { name:"Cama Elástica",      img:"", desc:"Pulos altos com tela de proteção e segurança reforçada.",        age:"4 a 14 anos", capacity:"Até 4 crianças", category:"Recreativos", ageGroup:"4-14", event:["Aniversário","Condomínio","Escolar"], badge:"recomendado" },
+    { name:"Castelo Inflável",   img:"", desc:"Cenário encantado perfeito para festas temáticas.",              age:"3 a 10 anos", capacity:"Até 8 crianças", category:"Infláveis", ageGroup:"3-10", event:["Aniversário"], badge:"novidade" },
+  ];
+
+  const WA = "https://wa.me/5500000000000";
+  const badgeMap = {
+    "mais-alugado": { label:"Mais alugado", color:"var(--brand-red)",  icon:"flame" },
+    "novidade":     { label:"Novidade",     color:"var(--brand-green)", icon:"sparkles" },
+    "recomendado":  { label:"Recomendado",  color:"var(--brand-blue)",  icon:"thumbs-up" },
+  };
+
+  /* =====================================================================
+     CATÁLOGO AGRUPADO POR CATEGORIA (sem filtros)
+  ===================================================================== */
+  function renderToys(){
+    const grid = document.getElementById('toy-grid');
+    // Agrupar por categoria
+    const groups = {};
+    toys.forEach(t => {
+      if (!groups[t.category]) groups[t.category] = [];
+      groups[t.category].push(t);
+    });
+    let html = '';
+    for (const [cat, items] of Object.entries(groups)) {
+      html += `<div class="col-span-full"><h3 class="text-2xl font-bold font-display text-foreground">${cat}</h3><div class="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">`;
+      items.forEach(t => {
+        const b = badgeMap[t.badge];
+        const badge = b ? `<span class="absolute left-4 top-4 z-10 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold text-white shadow-soft" style="background:${b.color}"><i data-lucide="${b.icon}" class="h-3.5 w-3.5"></i>${b.label}</span>` : '';
+        html += `
+          <article class="toy-card group overflow-hidden rounded-3xl border border-border bg-white shadow-card hover:-translate-y-1.5 hover:shadow-lift transition-all duration-300">
+            <div class="relative aspect-[4/3] overflow-hidden bg-muted">
+              ${badge}
+              <img src="${t.img}" alt="${t.name}" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            </div>
+            <div class="p-6">
+              <h4 class="text-lg font-bold">${t.name}</h4>
+              <p class="mt-1.5 text-sm leading-relaxed text-muted-foreground">${t.desc}</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold" style="background:var(--ink-100)"><i data-lucide="baby" class="h-3.5 w-3.5" style="color:var(--brand-blue)"></i>${t.age}</span>
+                <span class="inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold" style="background:var(--ink-100)"><i data-lucide="users" class="h-3.5 w-3.5" style="color:var(--brand-green)"></i>${t.capacity}</span>
+              </div>
+              <a href="${WA}?text=${encodeURIComponent('Olá! Tenho interesse em alugar o brinquedo: '+t.name)}" target="_blank" rel="noopener"
+                 class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full py-2.5 text-sm font-semibold text-white shadow-soft bg-hero-gradient hover:opacity-95 transition-opacity">
+                Solicitar este brinquedo <i data-lucide="message-circle" class="h-4 w-4"></i>
+              </a>
+            </div>
+          </article>`;
+      });
+      html += `</div></div>`;
+    }
+    grid.innerHTML = html;
+    lucide.createIcons();
+  }
+
+  renderToys();
+
+  /* =====================================================================
+     PROCESSO
+  ===================================================================== */
+  const steps = [
+    { n:"01", title:"Escolha os brinquedos", text:"Navegue pelo catálogo e selecione as atrações ideais." },
+    { n:"02", title:"Solicite orçamento",    text:"Envie sua data e local — respondemos em poucos minutos." },
+    { n:"03", title:"Agende a data",         text:"Confirme com facilidade e receba todas as orientações." },
+    { n:"04", title:"Nós montamos tudo",     text:"Chegamos antes, instalamos com cuidado e testamos cada item." },
+    { n:"05", title:"Diversão garantida",    text:"Aproveite o evento. Cuidamos da desmontagem ao final." },
+  ];
+  document.getElementById('process-list').innerHTML = steps.map((p,i) => `
+    <li class="reveal relative" style="transition-delay:${i*0.06}s">
+      <div class="flex items-center gap-3 lg:flex-col lg:items-start">
+        <div class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl text-base font-extrabold text-white shadow-soft bg-hero-gradient">${p.n}</div>
+        <div>
+          <h3 class="text-base font-bold">${p.title}</h3>
+          <p class="mt-1 text-sm leading-relaxed text-muted-foreground">${p.text}</p>
+        </div>
+      </div>
+    </li>`).join('');
+
+  /* =====================================================================
+     REVIEWS (slider)
+  ===================================================================== */
+  const reviews = [
+    { name:"Mariana Costa",   role:"Aniversário de 6 anos",             photo:"https://i.pravatar.cc/120?img=47", text:"Equipe super atenciosa e pontual. Os brinquedos chegaram impecáveis e meu filho amou a festa!" },
+    { name:"Rafael Pereira",  role:"Síndico — Cond. Jardim das Flores", photo:"https://i.pravatar.cc/120?img=12", text:"Contratamos para o evento do condomínio. Organização exemplar e crianças felizes do início ao fim." },
+    { name:"Juliana Andrade", role:"Festa escolar",                     photo:"https://i.pravatar.cc/120?img=32", text:"Profissionais incríveis. Tudo limpo, seguro e bem montado. Recomendo de olhos fechados." },
+    { name:"Carlos Menezes",  role:"Evento corporativo familiar",       photo:"https://i.pravatar.cc/120?img=14", text:"Atendimento humanizado e brinquedos de altíssima qualidade. Vamos contratar novamente!" },
+    { name:"Patrícia Lima",   role:"Aniversário gemelar",               photo:"https://i.pravatar.cc/120?img=45", text:"Fizeram a festa das minhas gêmeas! Tudo lindo, seguro e cheio de cor. Nota mil!" },
+  ];
+  const star = '<svg class="h-4 w-4" viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+  const track = document.getElementById('reviews-track');
+  track.innerHTML = reviews.map(r => `
+    <div class="review-slide w-full shrink-0 px-1 sm:w-1/2 lg:w-1/3">
+      <figure class="relative h-full rounded-3xl border border-border bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+        <span class="absolute right-5 top-5 inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-bold text-white" style="background:var(--brand-green)">5.0 <i data-lucide="star" class="h-3 w-3" fill="white"></i></span>
+        <div class="flex">${star.repeat(5)}</div>
+        <blockquote class="mt-4 text-sm leading-relaxed">&ldquo;${r.text}&rdquo;</blockquote>
+        <figcaption class="mt-5 flex items-center gap-3 border-t border-border pt-4">
+          <img src="${r.photo}" alt="${r.name}" class="h-11 w-11 rounded-full object-cover ring-2 ring-white shadow-soft" loading="lazy" />
+          <div>
+            <p class="text-sm font-bold leading-tight">${r.name}</p>
+            <p class="text-xs text-muted-foreground">${r.role}</p>
+          </div>
+        </figcaption>
+      </figure>
+    </div>`).join('');
+  document.getElementById('rating-stars').innerHTML = star.replace(/h-4 w-4/g,'h-5 w-5').repeat(5);
+
+  (function reviewSlider(){
+    let index = 0, timer;
+    const slides = Array.from(track.children);
+    const perView = () => window.innerWidth>=1024 ? 3 : window.innerWidth>=640 ? 2 : 1;
+    const maxIndex = () => Math.max(0, slides.length - perView());
+    const dotsWrap = document.getElementById('reviews-dots');
+
+    function buildDots(){
+      dotsWrap.innerHTML='';
+      for(let i=0;i<=maxIndex();i++){
+        const d=document.createElement('button');
+        d.className='dot h-2.5 rounded-full bg-border';
+        d.style.width = i===index ? '24px':'10px';
+        if(i===index) d.style.background='var(--brand-blue)';
+        d.addEventListener('click',()=>{ index=i; update(); reset(); });
+        dotsWrap.appendChild(d);
+      }
+    }
+    function update(){
+      index = Math.min(index, maxIndex());
+      track.style.transform = `translateX(-${index*(100/perView())}%)`;
+      Array.from(dotsWrap.children).forEach((d,i)=>{ d.style.width=i===index?'24px':'10px'; d.style.background=i===index?'var(--brand-blue)':''; if(i!==index)d.classList.add('bg-border'); else d.classList.remove('bg-border'); });
+    }
+    function next(){ index = index>=maxIndex()?0:index+1; update(); }
+    function prev(){ index = index<=0?maxIndex():index-1; update(); }
+    function reset(){ clearInterval(timer); timer=setInterval(next,4500); }
+
+    document.getElementById('rev-next').addEventListener('click',()=>{ next(); reset(); });
+    document.getElementById('rev-prev').addEventListener('click',()=>{ prev(); reset(); });
+    window.addEventListener('resize',()=>{ buildDots(); update(); });
+    buildDots(); update(); reset();
+  })();
+
+  /* =====================================================================
+     YEAR + HEADER + MOBILE MENU
+  ===================================================================== */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const header = document.getElementById('site-header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 16);
+  onScroll(); window.addEventListener('scroll', onScroll, { passive:true });
+
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    menuBtn.innerHTML = mobileMenu.classList.contains('hidden')
+      ? '<i data-lucide="menu" class="h-5 w-5"></i>'
+      : '<i data-lucide="x" class="h-5 w-5"></i>';
+    lucide.createIcons();
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  /* =====================================================================
+     SCROLL REVEAL (Intersection Observer)
+  ===================================================================== */
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal,.reveal-scale').forEach(el=>io.observe(el));
+
+  /* =====================================================================
+     COUNT-UP METRICS (anima os números da seção "Sobre")
+  ===================================================================== */
+  const countIO = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting) return;
+      const el = e.target, target = +el.dataset.count, suffix = el.dataset.suffix || '';
+      const dur = 1400, start = performance.now();
+      function tick(now){
+        const p = Math.min(1,(now-start)/dur);
+        const eased = 1-Math.pow(1-p,3);
+        el.textContent = Math.round(target*eased) + suffix;
+        if(p<1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      countIO.unobserve(el);
+    });
+  }, { threshold:0.5 });
+  document.querySelectorAll('[data-count]').forEach(el=>countIO.observe(el));
+
+  /* =====================================================================
+     PARALLAX (decorative)
+  ===================================================================== */
+  const parallaxEls = Array.from(document.querySelectorAll('[data-parallax]'));
+  let ticking=false;
+  function applyParallax(){
+    const y = window.scrollY;
+    parallaxEls.forEach(el=>{
+      const speed = parseFloat(el.dataset.parallax)||0.1;
+      el.style.transform = `translateY(${y*speed*-0.4}px)`;
+    });
+    ticking=false;
+  }
+  window.addEventListener('scroll', ()=>{ if(!ticking){ requestAnimationFrame(applyParallax); ticking=true; } }, { passive:true });
+
+  /* =====================================================================
+     LIGHTBOX
+  ===================================================================== */
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  const lbCap = document.getElementById('lightbox-caption');
+  function openLightbox(src, cap){
+    lbImg.src = src; lbImg.alt = cap || ''; lbCap.textContent = cap || '';
+    lightbox.classList.remove('hidden'); lightbox.classList.add('flex');
+    requestAnimationFrame(()=>{ lightbox.style.opacity='1'; lbImg.style.transform='scale(1)'; });
+    document.body.style.overflow='hidden';
+  }
+  function closeLightbox(){
+    lightbox.style.opacity='0'; lbImg.style.transform='scale(.95)';
+    setTimeout(()=>{ lightbox.classList.add('hidden'); lightbox.classList.remove('flex'); document.body.style.overflow=''; }, 300);
+  }
+  document.querySelectorAll('.gallery-item').forEach(btn=>{
+    lbImg.style.transform='scale(.95)';
+    btn.addEventListener('click',()=>openLightbox(btn.dataset.img, btn.dataset.caption));
+  });
+  document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) closeLightbox(); });
+  document.addEventListener('keydown',(e)=>{ if(e.key==='Escape' && !lightbox.classList.contains('hidden')) closeLightbox(); });
+
+  lucide.createIcons();
+</script>
+</body>
+</html>
